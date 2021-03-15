@@ -1,0 +1,13 @@
+.prediction {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+ }
+
+ tr {
+	background-color: #9ecca4;
+	
+}

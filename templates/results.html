@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/background.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+          
+            <h1>Electrical Load Prediction</h1>
+            <!-- <span class="subheading">Location : Spain</span> -->
+            <h3>Location : Spain</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+      
+    <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+          
+          <h2>Result : </h2>
+          
+          
+          
+
+        </div>
+        
+        <table class="table">
+    <tr class="table__header">
+      <th class="table__cell">Date</th>
+      <th class="table__cell">Predicted Load (MW)</th>
+            
+    </tr>
+
+    
+    {% for row in tup%}
+    <tr class="table__row">
+      {% for cell in row%}
+      <td class="table__cell">{{ cell }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+
+    
+  </table>
+
+        <h1>Load Chart</h1>
+        <!-- bar chart canvas element -->
+        <canvas id="myChart" width="600" height="400"></canvas>
+        <p id="caption">The Load Chart is being displayed for the date <b>{{date}}</b> .</p>
+
+        <script>
+        // Global parameters:
+// do not resize the chart canvas when its container does (keep at 600x400px)
+Chart.defaults.global.responsive = false;
+ 
+// define the chart data
+var chartData = {
+  labels : [{% for item in labels %}
+             "{{item}}",
+            {% endfor %}],
+  datasets : [{
+      label: '{{ legend }}',
+      fill: true,
+      lineTension: 0.1,
+      backgroundColor: "rgba(75,192,192,0.4)",
+      borderColor: "rgba(75,192,192,1)",
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: "rgba(75,192,192,1)",
+      pointBackgroundColor: "#fff",
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "rgba(75,192,192,1)",
+      pointHoverBorderColor: "rgba(220,220,220,1)",
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data : [{% for item in values %}
+                {{item}},
+              {% endfor %}],
+      spanGaps: false
+  }]
+}
+ 
+// get chart canvas
+var ctx = document.getElementById("myChart").getContext("2d");
+ 
+// create the chart using the chart canvas
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: chartData,
+});
+    </script>
+
+
+        
+
+        
+
+        <!-- Pager -->
+        
+      </div>
+    </div>
+  </div>
+
+  
+    
+
+    
+
+  </div>
+  
+
+{% endblock %}
+
+  

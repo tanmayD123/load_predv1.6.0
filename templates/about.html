@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <!-- <header class="masthead" style="background-image: url('static/img/about-bg.jpg')"> -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/about-bg.jpg') }}')">  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About Us</h1>
+            <h4>Greeting from BVUCOEP</h4>
+            <!-- <span class="subheading">Welcome to BVUCOEP</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Bharati Vidyapeeth (Deemed to be University) College of Engineering was established by Dr. Patangrao Kadam in 1983. </p>
+        <P>BVUCOEP is constituent unit of Bharati Vidyapeeth (Deemed to be University). Which has been Accredited to A+ grade in its third Cycle by ‘NAAC’ in 2017 (BVDU accredited to Grade ‘A’ in 2004 and 2011). </P>
+        <P>The National Board of Accreditation (NBA) has accredited programmes of BVUCOEP in 2018, 2012 and 2005. BVUCOEP ranked among top 100 Engineering Institutes of India continuously for five years by NIRF, MHRD, Govt. of India.</P>
+        
+        <h2>About the Team</h2>
+        <p>This project is developed by the <b>Department of Electrical Engineering</b></p>
+        <h5>Faculty Members :</h5>
+        <p>- Dr. D.S. Bankar (Head of Dept.) </p>
+        <p>- Prof. Shripad Desai</p>
+        <h5>Members involved in this project : </h5>
+        <p>1. Tanmay Dalal </p>
+        <p>2. Sudhanshu Kumar</p>
+        <p>3. Sahil Kadam</p>
+      </div>
+    </div>
+  </div>
+{% endblock %} 
