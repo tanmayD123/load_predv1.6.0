@@ -1,6 +1,10 @@
 # Electrical Load Forecasting using Machine Learning
 
 ## Table of Contents
+* [Demo](#demo)
+* [What is Electrical Load Forecasting](#what-is-electrical-load-forecasting)
+* [Overview](#overview)
+* [Motivation](#motivation)
 
 ## Demo
 Link : [Electrical Load Forecasting Heroku App](https://load-prediction-v-1-5-0.herokuapp.com/)
@@ -29,5 +33,5 @@ Many of these problems can be reduced to some extend if proper load forecasting 
 
 I am sure many people would have experienced atleast one of the above problem. Inconsistent power distribution is not good for the reputation of the generating company and since all our everyday appliances run on electricty, thus causing inconvenience. 
 
-Being from Electrical domain and having Machine Learning knowledge, I am attempted to solve a real world problem which will benefit the society. 
+Being from Electrical domain and having Machine Learning knowledge, I have attempted to solve a real world problem which will benefit the society. 
 
