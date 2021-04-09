@@ -24,6 +24,7 @@ There are some problems which are faced by modern electrical industry :
 -	Power surges and spikes
 -	Sags, dips and outrages
 -	Overloaded circuits
+
 Many of these problems can be reduced to some extend if proper load forecasting is done.
 I am sure many people would have experienced atleast one of the above problem. Inconsistent power distribution is not good for the reputation of the generating company and since all our everyday appliances run on electricty, thus causing inconvenience. 
 
