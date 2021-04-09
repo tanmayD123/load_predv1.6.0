@@ -35,3 +35,5 @@ I am sure many people would have experienced atleast one of the above problem. I
 
 Being from Electrical domain and having Machine Learning knowledge, I have attempted to solve a real world problem which will benefit the society. 
 
+## Technical Aspect
+
