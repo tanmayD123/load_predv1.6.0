@@ -31,7 +31,7 @@ There are some problems which are faced by modern electrical industry :
 
 Many of these problems can be reduced to some extend if proper load forecasting is done.
 
-I am sure many people would have experienced atleast one of the above problem. Inconsistent power distribution is not good for the reputation of the generating company and since all our everyday appliances run on electricty, thus causing inconvenience. 
+I am sure many people would have experienced atleast one of the above problem. Inconsistent power distribution is not good for the reputation of the generating company and since all our everyday appliances run on electricity, thus causing inconvenience. 
 
 Being from Electrical domain and having Machine Learning knowledge, I have attempted to solve a real world problem which will benefit the society. 
 
