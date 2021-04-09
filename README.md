@@ -15,4 +15,15 @@ We will start with a short explanation of what Load Forecasting is :
 
 
 ## Overview
-This is a Machine Learning model which aims to solve a Time-Series problem using FBprophet. The model takes input such as Temperature, Day and will print the output in the form of a table with a load chart which I created using Chart.js. The model is trained on `Energy Dataset.csv`
+This is a Machine Learning model which aims to solve a Time-Series problem using __FBprophet__. The model takes input such as Temperature, Day and will print the output in the form of a table with a load chart which I created using `Chart.js`. The model is trained on `Energy Dataset.csv` which has 35,000 records over a period of 3 years i.e. 2015-2018. 
+
+## Motivation
+I am a final year Electrical Engineering student and this is my final year project.
+There are some problems which are faced by modern electrical industry :
+-	Intermittent Power
+-	Power surges and spikes
+-	Sags, dips and outrages
+-	Overloaded circuits
+Many of these problems can be reduced to some extend if proper load forecasting is done.
+I am sure many people would have experienced atleast one of the above problem. Inconsistent power distribution is not good for the reputation of the generating company and since all our everyday appliances run on electricty, thus causing inconvenience. 
+
