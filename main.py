@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, render_template_string, send_
 import pickle
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 
 
@@ -53,6 +53,7 @@ def predict():
     
     date = request.form["Date"]
     temperature = request.form["Temperature"]
+    humidity = request.form["Humidity"]
 
     #Processing the month and temperature sensitivity
     new = ""
@@ -74,7 +75,22 @@ def predict():
     }   
 
 
-    
+    rh = {
+    '01' : 0.205,
+    '02' : 0.180,
+    '03' : -0.274,
+    '04' : -0.249,
+    '05' : -0.353,
+    '06' : 0.089,
+    '07' : 0.363,
+    '08' : 0.454,
+    '09' : 0.461,
+    '10' : -0.055,
+    '11' : 0.118,
+    '12' : 0.098
+    }   
+
+
 
     offset=["01:00:00","02:00:00","03:00:00","04:00:00","05:00:00","06:00:00","07:00:00","08:00:00","09:00:00"
        ,"10:00:00","11:00:00","12:00:00","13:00:00","14:00:00","15:00:00","16:00:00","17:00:00","18:00:00", "19:00:00"
@@ -118,6 +134,11 @@ def predict():
         if(n==new):
             addon = temp[n] * abs(int(temperature) - 20)
             prediction['yhat'] += addon
+
+    for n in rh:
+        if(n==new):
+            addon1 = rh[n] * abs(int(humidity))
+            prediction['yhat'] += addon1        
 
     dic = {
     "date" : prediction['ds'] , 
