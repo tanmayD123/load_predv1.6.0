@@ -54,11 +54,34 @@ def predict():
     date = request.form["Date"]
     temperature = request.form["Temperature"]
     humidity = request.form["Humidity"]
+    weather = request.form["Weather"]
+
+    summer = {
+    "clouds" : 200,
+    "clear" : 300,
+    "rain" : 150
+    }
+
+    winter = {
+    "clouds" : 200,
+    "clear" : 300,
+    "rain" : 150
+    }
+
+    rainy = {
+    "clouds" : 200,
+    "clear" : 300,
+    "rain" : 150
+    }
 
     #Processing the month and temperature sensitivity
     new = ""
-    for n in np.arange(5,7):
+    for n in np.arange(5,7):  #used to find the month
         new = new + str(date[n])
+
+    new1 = ""   #used to find date
+    for n in np.arange(8,10):
+        new1 = new1 + str(date[n])
 
     temp = {
     '01' : 2.13,
@@ -139,6 +162,43 @@ def predict():
         if(n==new):
             addon1 = rh[n] * abs(int(humidity))
             prediction['yhat'] += addon1        
+
+    new = int(new)   #convert month into int dtype
+    new1 = int(new1) #convert day into int dtype
+
+    if(new>=3 & new<=6):
+        for n in summer:
+            if(n==weather):
+                prediction['yhat'] += summer[n]
+
+    if(new==11 or new==12 or new==1):
+        for n in winter:
+            if(n==weather):
+                prediction['yhat'] += winter[n]
+
+    if(new>=7 & new<=9):
+        for n in rainy:
+             if(n==weather):
+                prediction['yhat'] += rainy[n]
+
+    if(new==3):    #las fellas
+        if(new1>=15 and new1<=19):
+            prediction['yhat'] += 200
+                
+    if(new==7):    #july fair
+        prediction['yhat']+=200
+
+    if(new==10):    #national day
+        if(new1==9):
+            prediction['yhat'] += 150
+
+    if(new==5):     #lady of foresaken
+        if(new1>=11 and new1<=12):
+            prediction['yhat']+=50
+
+    if(new==4):     #easter holy festival
+        if(new1>=5 and new1<=11):
+            prediction['yhat'] += 70
 
     dic = {
     "date" : prediction['ds'] , 
