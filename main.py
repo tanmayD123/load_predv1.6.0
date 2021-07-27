@@ -57,21 +57,21 @@ def predict():
     weather = request.form["Weather"]
 
     summer = {
-    "clouds" : 200,
-    "clear" : 300,
-    "rain" : 150
+    "clouds" : 188,
+    "clear" : 321,
+    "rain" : 50
     }
 
     winter = {
-    "clouds" : 200,
-    "clear" : 300,
-    "rain" : 150
+    "clouds" : 102,
+    "clear" : 221,
+    "rain" : 319
     }
 
     rainy = {
-    "clouds" : 200,
-    "clear" : 300,
-    "rain" : 150
+    "clouds" : 211,
+    "clear" : 289,
+    "rain" : 156
     }
 
     #Processing the month and temperature sensitivity
@@ -84,17 +84,17 @@ def predict():
         new1 = new1 + str(date[n])
 
     temp = {
-    '01' : 2.13,
+    '01' : -2.13,
     '02' : 4.96,
     '03' : 17.03,
     '05' : 36.6,
     '06' : 53.14,
-    '07' : 39.76,
-    '08' : 37.22,
-    '09' : 22.37,
+    '07' : -39.76,
+    '08' : -37.22,
+    '09' : -22.37,
     '10' : 16.00,
-    '11' : 5.65,
-    '12' : 4.94
+    '11' : -5.94,
+    '12' : -4.94
     }   
 
 
@@ -157,6 +157,7 @@ def predict():
         if(n==new):
             addon = temp[n] * abs(int(temperature) - 20)
             prediction['yhat'] += addon
+            
 
     for n in rh:
         if(n==new):
@@ -183,22 +184,22 @@ def predict():
 
     if(new==3):    #las fellas
         if(new1>=15 and new1<=19):
-            prediction['yhat'] += 200
+            prediction['yhat'] += 212
                 
     if(new==7):    #july fair
-        prediction['yhat']+=200
+        prediction['yhat']+=188
 
     if(new==10):    #national day
         if(new1==9):
-            prediction['yhat'] += 150
+            prediction['yhat'] += 412
 
     if(new==5):     #lady of foresaken
         if(new1>=11 and new1<=12):
-            prediction['yhat']+=50
+            prediction['yhat']+=112
 
     if(new==4):     #easter holy festival
         if(new1>=5 and new1<=11):
-            prediction['yhat'] += 70
+            prediction['yhat'] += 378
 
     dic = {
     "date" : prediction['ds'] , 
